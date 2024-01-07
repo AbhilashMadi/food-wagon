@@ -8,16 +8,19 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Install pnpm
-        run: npm install -g pnpm  # Install pnpm globally if not available
+        run: npm install -g pnpm # Install pnpm globally if not available
 
       - name: Install dependencies with pnpm
-        run: pnpm install  # Use pnpm to install dependencies
+        run: pnpm install # Use pnpm to install dependencies
+
+      - name: Check code formatting
+        run: pnpm prettier:check
 
       - name: Build project
-        run: pnpm run build  # Run build command with pnpm
+        run: pnpm run build # Run build command with pnpm
