@@ -12,9 +12,7 @@ const AuthLayout = lazy(() => import("@/pages/auth/AuthLayout"));
 const Layout = lazy(() => import("@/pages/Layout"));
 const NotFound = lazy(() => import("@/pages/handlers/NotFound"));
 
-
 const App: FC = () => {
-
   return (
     <Suspense fallback={<Loader />}>
       <DataContex>
@@ -22,28 +20,36 @@ const App: FC = () => {
           <Routes>
             <Route>
               <Route index path={Paths.HOME} element={<Home />} />
-              <Route path={Paths.AUTH} element={<AuthLayout />} >
-                {routes.filter((obj) => !obj.isPrivate).map((obj, ind) => <Route
-                  index={ind === 0 ? true : false}
-                  element={<obj.component />}
-                  path={obj.path}
-                  key={obj.path}
-                />)}
+              <Route path={Paths.AUTH} element={<AuthLayout />}>
+                {routes
+                  .filter((obj) => !obj.isPrivate)
+                  .map((obj, ind) => (
+                    <Route
+                      index={ind === 0 ? true : false}
+                      element={<obj.component />}
+                      path={obj.path}
+                      key={obj.path}
+                    />
+                  ))}
               </Route>
-              <Route path={Paths.LANDING} element={<Layout />} >
-                {routes.filter((obj) => obj.isPrivate).map((obj, ind) => <Route
-                  index={ind === 0 ? true : false}
-                  element={<obj.component />}
-                  path={obj.path}
-                  key={obj.path}
-                />)}
+              <Route path={Paths.LANDING} element={<Layout />}>
+                {routes
+                  .filter((obj) => obj.isPrivate)
+                  .map((obj, ind) => (
+                    <Route
+                      index={ind === 0 ? true : false}
+                      element={<obj.component />}
+                      path={obj.path}
+                      key={obj.path}
+                    />
+                  ))}
               </Route>
               <Route path={Paths.NOT_FOUND} element={<NotFound />} />
             </Route>
           </Routes>
         </ThemeProvider>
       </DataContex>
-    </Suspense >
+    </Suspense>
   );
 };
 
