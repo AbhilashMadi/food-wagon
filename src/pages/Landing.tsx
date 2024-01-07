@@ -1,7 +1,6 @@
 import type { FC } from "react";
 
 const MenuPage: FC = () => {
-
   return <div>Menu</div>;
 };
 
