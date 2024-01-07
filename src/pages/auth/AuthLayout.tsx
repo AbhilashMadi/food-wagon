@@ -3,9 +3,9 @@ import { Outlet } from "react-router-dom";
 
 export const Component: FC = () => {
   return (
-    <div>
+    <main>
       <Outlet />
-    </div>
+    </main>
   );
 };
 

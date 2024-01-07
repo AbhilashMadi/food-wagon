@@ -3,7 +3,7 @@ export enum Paths {
   AUTH = "/auth",
   LOGIN = "/auth/login",
   REGISTER = "/auth/register",
-  LANDING = "/fit-me",
-  MENU = "/fit-me/menu",
+  LANDING = "/food-wagon",
+  MENU = "/food-wagon/menu",
   NOT_FOUND = "/*",
 }
