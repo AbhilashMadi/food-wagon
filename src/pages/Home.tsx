@@ -23,14 +23,10 @@ const SpecialDiscountItems = lazy(
   () => import("@/components/containers/SpecialDiscountItems"),
 );
 
-import { useData } from "@/hooks/context";
-import { Paths } from "@/routes/paths";
-
 export const Home: FC = () => {
-  const { navigateToRoute } = useData();
 
   return (
-    <main>
+    <main className="font-primary">
       <Announcement />
       <Navbar />
       <HeroSection />
@@ -42,7 +38,6 @@ export const Home: FC = () => {
       <FeedbackSection />
       <OrderNow />
       <Footer />
-      <button onClick={() => navigateToRoute(Paths.MENU)}>{"dsfdsf"}</button>
     </main>
   );
 };

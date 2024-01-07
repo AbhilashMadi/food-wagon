@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 const AuthLayout: FC = () => {
   return (
-    <main>
+    <main className="font-primary">
       <Outlet />
     </main>
   );
