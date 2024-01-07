@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { Outlet } from "react-router-dom";
 
-export const Component: FC = () => {
+const Layout: FC = () => {
   return (
     <div>
       <Outlet />
@@ -9,4 +9,4 @@ export const Component: FC = () => {
   );
 };
 
-Component.displayName = "Layout";
+export default Layout;

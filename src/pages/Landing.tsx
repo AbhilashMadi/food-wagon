@@ -1,7 +1,8 @@
 import type { FC } from "react";
 
-export const Component: FC = () => {
+const MenuPage: FC = () => {
+
   return <div>Menu</div>;
 };
 
-Component.displayName = "MenuPage";
+export default MenuPage;

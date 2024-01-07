@@ -1,7 +1,8 @@
 import type { FC } from "react";
 
-export const Component: FC = () => {
+const Login: FC = () => {
+
   return <div>Login</div>;
 };
 
-Component.displayName = "LoginForm";
+export default Login;

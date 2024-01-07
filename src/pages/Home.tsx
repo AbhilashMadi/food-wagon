@@ -1,31 +1,40 @@
-import Announcement from "@/components/common/Announcement";
-import Footer from "@/components/common/Footer";
-import Navbar from "@/components/common/Navbar";
-import FeaturedRestaurents from "@/components/containers/FeaturedRestaurents";
-import FeedbackSection from "@/components/containers/FeedbackSection";
-import HeroSection from "@/components/containers/HeroSection";
-import HowItWorksSection from "@/components/containers/HowItWorksSection";
-import OrderNow from "@/components/containers/OrderNow";
-import PopularItemsCarousel from "@/components/containers/PopularItemsCarousel";
-import SearchByFood from "@/components/containers/SearchByFood";
-import SpecialDiscountItems from "@/components/containers/SpecialDiscountItems";
 import type { FC } from "react";
+import { lazy } from "react";
 
-export const Component: FC = () => {
+const Announcement = lazy(() => import("@/components/common/Announcement"));
+const Footer = lazy(() => import("@/components/common/Footer"));
+const Navbar = lazy(() => import("@/components/common/Navbar"));
+const FeaturedRestaurents = lazy(() => import("@/components/containers/FeaturedRestaurents"));
+const FeedbackSection = lazy(() => import("@/components/containers/FeedbackSection"));
+const HeroSection = lazy(() => import("@/components/containers/HeroSection"));
+const HowItWorksSection = lazy(() => import("@/components/containers/HowItWorksSection"));
+const OrderNow = lazy(() => import("@/components/containers/OrderNow"));
+const PopularItemsCarousel = lazy(() => import("@/components/containers/PopularItemsCarousel"));
+const SearchByFood = lazy(() => import("@/components/containers/SearchByFood"));
+const SpecialDiscountItems = lazy(() => import("@/components/containers/SpecialDiscountItems"));
 
-  return <main>
-    <Announcement/>
-    <Navbar/>
-    <HeroSection/>
-    <SpecialDiscountItems/>
-    <HowItWorksSection/>
-    <PopularItemsCarousel/>
-    <FeaturedRestaurents/>
-    <SearchByFood/>
-    <FeedbackSection/>
-    <OrderNow/>
-    <Footer/>
-  </main>;
+import { useData } from "@/hooks/context";
+import { Paths } from "@/routes/paths";
+
+export const Home: FC = () => {
+  const { navigateToRoute } = useData();
+
+  return (
+    <main>
+      <Announcement />
+      <Navbar />
+      <HeroSection />
+      <SpecialDiscountItems />
+      <HowItWorksSection />
+      <PopularItemsCarousel />
+      <FeaturedRestaurents />
+      <SearchByFood />
+      <FeedbackSection />
+      <OrderNow />
+      <Footer />
+      <button onClick={() => navigateToRoute(Paths.MENU)}>{"dsfdsf"}</button>
+    </main>
+  );
 };
 
-Component.displayName = "Home";
+export default Home;

@@ -1,7 +1,7 @@
 import type { FC } from "react";
 
-export const Component: FC = () => {
+const Register: FC = () => {
   return <div>Register</div>;
 };
 
-Component.displayName = "RegisterForm";
+export default Register;

@@ -6,6 +6,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
     "plugin:@tanstack/eslint-plugin-query/recommended",
+    "plugin:react/recommended",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
@@ -33,8 +34,8 @@ module.exports = {
     // Additional rules
     semi: ["error", "always"],
     "no-console": "warn",
-    // "react/jsx-uses-react": "error",
-    // "react/jsx-uses-vars": "error",
-    // "react/react-in-jsx-scope": "off"
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/react-in-jsx-scope": "off"
   },
 };

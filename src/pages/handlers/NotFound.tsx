@@ -1,7 +1,7 @@
 import type { FC } from "react";
 
-export const Component: FC = () => {
+const NotFound: FC = () => {
   return <div>NotFound</div>;
 };
 
-Component.displayName = "NotFound";
+export default NotFound;

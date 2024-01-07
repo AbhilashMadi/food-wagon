@@ -1,9 +1,7 @@
-import type {FC} from "react";
+import type { FC } from "react";
 
-const SearchByFood:FC = () => {
-  return (
-    <div>SearchByFood</div>
-  );
+const SearchByFood: FC = () => {
+  return <div>SearchByFood</div>;
 };
 
 export default SearchByFood;

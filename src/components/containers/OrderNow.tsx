@@ -1,9 +1,7 @@
-import type {FC} from "react";
+import type { FC } from "react";
 
-const OrderNow:FC = () => {
-  return (
-    <div>OrderNow</div>
-  );
+const OrderNow: FC = () => {
+  return <div>OrderNow</div>;
 };
 
 export default OrderNow;
