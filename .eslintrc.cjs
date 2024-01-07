@@ -19,18 +19,22 @@ module.exports = {
     "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
     "@typescript-eslint/consistent-type-imports": "error",
     "@typescript-eslint/indent": ["error", 2],
-    "indent": "off",
-    "quotes": ["error", "double"],
+    "padding-line-between-statements": [
+      "error",
+      { blankLine: "always", prev: "var", next: "return" }
+    ],
+    indent: "off",
+    quotes: ["error", "double"],
     "react-refresh/only-export-components": [
       "warn",
-      { "allowConstantExport": true }
+      { allowConstantExport: true },
     ],
     "react/prop-types": "off",
     // Additional rules
-    "semi": ["error", "always"],
+    semi: ["error", "always"],
     "no-console": "warn",
     // "react/jsx-uses-react": "error",
     // "react/jsx-uses-vars": "error",
     // "react/react-in-jsx-scope": "off"
-  }
-}
+  },
+};

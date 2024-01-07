@@ -1,9 +1,7 @@
 import type { FC } from "react";
 
-const Home: FC = () => {
-  return (
-    <div>Home</div>
-  );
+export const Component: FC = () => {
+  return <div className="p-2 px-4">Home</div>;
 };
 
-export default Home;
+Component.displayName = "Home";
