@@ -1,29 +1,23 @@
-name: food_wagon
+name: Node.js CI
 
 on:
   push:
-    branches: [dev]
+    branches:
+      - dev
 
 jobs:
   build:
-    runs-on: self-hosted
-
-    strategy:
-      matrix:
-        node-version: [18.x]
-
+    runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: "pnpm"
 
-      - name: Install dependencies
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies with pnpm
         run: pnpm install
 
-      - name: Build
-        run: pnpm build
+      - name: Build project
+        run: pnpm run build
